@@ -1,0 +1,23 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: azure;
+}
+.navbar h1{
+    font-size: 20px;
+    padding-left: 20px;
+}
+.navlinks{
+    display: flex;
+    gap: 30px
+}
+.navlinks a{
+    text-decoration: none;
+}
+.users .img{
+    width: 40px;
+    height: 40px !important;
+    border-radius: 50%;
+    margin-right: 20px;
+}
