@@ -21,6 +21,7 @@ const page = () => {
         SignUpHook(user)
         dispatch(login(storUser))
     }
+    
     return (
         <div className="singUppage">
             <form action="" onSubmit={(e)=>handleSubmit(event)}>

@@ -3,10 +3,21 @@ import {createSlice, current} from '@reduxjs/toolkit'
 interface authState{
     email:any
 }
-const existingUser = JSON.parse(localStorage.getItem('user'))
+type StorageData = {
+    email:any
+};
+let currentData = ''
+if (typeof window !== 'undefined') {
+    const item:any = localStorage.getItem('user')
+    
+    const existingUser:any = JSON.parse(item) as StorageData;
+    currentData = existingUser
+}
+
+
 
 const initialState:authState = {
-    email: existingUser?existingUser:null
+    email: currentData?currentData:''
 }
 
 
@@ -26,7 +37,7 @@ const authSlice = createSlice({
             localStorage.setItem('user',userData)
         },
         logOut:(state:any,action:any)=>{
-            state.email = null;
+            state.email = '';
         }
     }
     
